@@ -6,11 +6,11 @@ A low-cost 6DoF hand exoskeleton using linkage and tendon mechanism under ESP32.
 
 一个约500元低成本6自由度的手部外骨骼，用连杆驱动四指，用线驱模拟肌腱机制驱动大拇指，主控是ESP32，动力源是七个SC09总线舵机，可以承载大于20N的负载。
 
-开源地址：https://github.com/ksDreamer/hand_exoskeleton
+开源地址：https://github.com/MengyangGao/hand_exoskeleton
 
 视频介绍：[[开源] 500块钱的低成本6自由度手部外骨骼_灵巧手_康复手套](https://www.bilibili.com/video/BV1YzUzY8ETY/)
 
-![overview](images/overview.png)
+![overview](images/overview.jpg)
 
 # News 更新记录
 
@@ -22,7 +22,7 @@ A low-cost 6DoF hand exoskeleton using linkage and tendon mechanism under ESP32.
 
 # Getting Started 复现教程
 
-1. 克隆仓库到本地，下载相关资源  ```git clone https://github.com/ksDreamer/hand_exoskeleton.git```
+1. 克隆仓库到本地，下载相关资源  ```git clone https://github.com/MengyangGao/hand_exoskeleton.git```
 
 2. 修改机械结构、开始3D打印。机械结构的资源在`mechanics`文件夹里，包含SolidWorks格式模型（零件是`.SLDPRT`，总装是`_概念总装Assembly.SLDASM`，手的模型文件：`Assy 90.SLDPRT`）和FDM的3D打印文件（零件是`.stl`，总装是`_概念总装Assembly.3mf`），需要修改就自行修改（打印手的模型需缩小到原本的0.9）。
 
@@ -72,9 +72,8 @@ A low-cost 6DoF hand exoskeleton using linkage and tendon mechanism under ESP32.
 
 # Mechanics 机械介绍
 
-![model_simulation](./images/model_simulation.jpg)
-
-![model_simulation2](./images/model_simulation2.jpg)
+|<img src="images/model_simulation.jpg" width="100%">|<img src="images/model_simulation2.jpg" width="80%">|
+|---|---|
 
 ## 基本信息
 
@@ -96,15 +95,16 @@ A low-cost 6DoF hand exoskeleton using linkage and tendon mechanism under ESP32.
 
 ![model_finger_equipment](./images/model_finger_equipment.jpg)
 
-传动部分通过**曲柄连杆**与**鱼眼轴承**将水平面内的运动转化为手指的竖直运动，并限制摇杆的行程，保证安全性；
+传动部分通过**曲柄连杆**与**鱼眼轴承**将水平面内的运动转化为手指的竖直运动，并限制摇杆的行程，保证安全性；  
 执行部分每根手指采用八根连杆的系统控制，考虑到MCP关节两侧没有地方穿戴外骨骼，故通过两个平行四边形四连杆将关节引出，PIP关节通过四连杆设计方式准确控制弯曲程度，并且进一步通过螺丝之间的干涉再次保证手指不会反向弯曲。  
 
 ## 大拇指——线驱
 
 大拇指通过三个舵机实现两自由度的紧凑灵活过驱动线驱控制。
 
-![Thumb_1](./images/IMG_1160.jpeg)
-![Thumb_2](./images/IMG_1161.jpeg)
+|<img src="images/thumb_1.jpeg" width="100%">|<img src="images/thumb_2.jpeg" width="100%">|
+|---|---|
+
 其中1号舵机和3号舵机控制一个轴的自由度，2号舵机控制水平面垂直另一个轴的自由度。
 
 # Program 程序介绍
@@ -166,7 +166,7 @@ case 23: // Open Hand
 
 WEBPAGE.h 是对Web前端界面的开发。本质是HTML+JavaScript+CSS。  
 
-![WebGUI](./images/WebGUI.png)
+![WebGUI](./images/WebGUI.jpg)
 
 要给Web前端开发新功能，想要什么动作方案就在CONNECT.h里的```active Control```函数处添加新case，然后在WEBPAGE.h里调用```toggleCheckbox```函数。（建议从case 30开始，不建议和官方的case重叠覆盖）
 
@@ -258,19 +258,19 @@ WEBPAGE.h 是对Web前端界面的开发。本质是HTML+JavaScript+CSS。
 
 Mechanics：
 
-CJY, [ZJR](https://github.com/peterstark1900)
+Jiayu Chen, [Jianran Zhang](https://github.com/peterstark1900)
 
 Electronics：
 
-[Kevin Stark](https://github.com/ksDreamer), [Khlann](https://github.com/Khlann)
+[Mengyang Gao](https://github.com/MengyangGao), [Haolan Kang](https://github.com/Khlann)
 
 Software:
 
-[Kevin Stark](https://github.com/ksDreamer)
+[Mengyang Gao](https://github.com/MengyangGao)
 
 Report and other work:
 
-ZY, LXH, [Kevin Stark](https://github.com/ksDreamer)
+Yi Zhu, Xuhan Lang, [Mengyang Gao](https://github.com/MengyangGao)
 
 
 

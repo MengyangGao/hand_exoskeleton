@@ -1,6 +1,6 @@
 // A Compact and Lightweight Rigid-Tendon Combined Exoskeleton for Hand Rehabilitation
 // Author: Kevin Stark
-// Open Source: https://github.com/ksDreamer/hand_exoskeleton
+// Open Source: https://github.com/MengyangGao/hand_exoskeleton
 
 // ServoDriver.ino 是主程序，void loop()是主函数，在这里写的驱动舵机转动的程序上电会自动循环执行。
 // 单舵机控制：st.WritePos(2, 450, 0,400); 分别是ID，角度，未知填0即可，速度。

@@ -66,7 +66,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 
 <body>
     <h3>A Compact and Lightweight Rigid-Tendon Combined Exoskeleton for Hand Rehabilitation</h3>
-    <p>https://github.com/ksDreamer/hand_exoskeleton</p>
+    <p>https://github.com/MengyangGao/hand_exoskeleton</p>
     <p>
     <span id="IDValue">Click this button to start searching servos.</span>
     <p>
